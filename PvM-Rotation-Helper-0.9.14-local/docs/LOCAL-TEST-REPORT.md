@@ -1,0 +1,575 @@
+# Local test report — PvM Rotation Helper 0.9.14
+
+Recorded date: 2026-10-25.
+
+**555 checks passed; 40 Lua files parsed with Lua 5.4; 68 automatically discovered isolated suites.**
+
+Each *_spec.lua uses a fresh LuaRuntime without the utf8 library. The strict API simulation does not run an RS3 client. Compilation, restricted-call-surface and unchanged runtime/harness/suite/offline-input hashes passed. Packaging rechecks these inputs. These results do not establish personal human review, a complete native test matrix or Jagex approval.
+
+## Passed checks
+
+- Every saved profile name stays literal even when it equals a localized default name or UI key
+- A broken diagnostic reporter cannot interrupt rendering-failure cleanup or its recovery panel
+- Progression retires a disappeared locator frame without disabling a valid input channel
+- Native icon completion can use its current explicit registered destination when the pointer disappears
+- Missing-pointer native completion never guesses a foreign or absent drop destination
+- Saved localized key words display in the selected language without rewriting literal key glyphs or stored labels
+- Destroying all plugin windows releases old icon, drop and hover registries and rejects their queued gestures
+- Reordering a running rotation starts the newly selected step at its first repetition
+- Appending an ability after completion clears the previous completion and duplicate-input state
+- No-op and failed structural saves leave running repetition and duplicate-input state unchanged
+- A native foreign destination cannot drop through a covering control onto an underlying own target
+- A queued native completion retains its current registered destination after the mouse has moved elsewhere
+- Completed or cancelled item captures reject delayed native drags while a fresh press can start another gesture
+- Deleting a step retires its input token without changing failed deletion state
+- Manual reselection permits a fresh input while automatic adjacent steps still suppress the duplicate channel
+- Legacy passive tails complete truthfully and passive-only or expert starts do not claim to follow input
+- A closed or minimised details editor cannot keep an otherwise visible running rotation paused
+- Manual rectangle corrections remain inside their original native interface when bars overlap
+- An explicitly associated-object menu source never progresses an ability beneath matching artwork
+- Modal, page and bar-selection transitions retire old callbacks without writing or discarding slot drafts
+- An expired opacity surface cannot interrupt Stop cleanup after an appearance save fails
+- Expert manual legacy-incantation selection edits and deletes that exact saved step without input progression
+- Assisted starts and progression still skip legacy incantations while stopped manual selection remains exact
+- Loading and refreshing derived ability catalogues never mutate the static game-data resource
+- Malformed live-book identifiers cannot enter selection or establish complete membership
+- Future readable identities never treat the client's name as an English plugin translation
+- Selected-language spell names do not read or retain unused client-language name metadata
+- Queue selection uses the committed clamped position at phase end and before an ability
+- Moving a legacy item alias deduplicates by canonical identity without bypassing reminder capacity
+- Declared Enum pair counts reject truncated snapshots without retiring saved built-in identities
+- An empty startup snapshot cannot establish global ability removal
+- Explicitly contradictory named Struct proxies cannot supply another ability or spell's artwork
+- Explicit malformed tier Params fail closed while absent and zero metadata retain unique confirmed identity
+- A readable future ability retains an Unconfirmed type filter when optional classification fails
+- An expired visible native root is skipped while an independently readable bar retains its exact slots
+- Malformed root identity snapshots remain unavailable without suppressing a healthy bar
+- A root expiring during Detect cannot prevent another bar import or overwrite its unavailable saved neighbor
+- An unrelated expired native root cannot abort matching a healthy current ability key
+- New named rotation opens its editor; blank names leave the form and data intact
+- User names equal to UI keys remain literal in all four languages
+- Unicode character limits match native fields and malformed UTF-8 is rejected
+- Selecting another overlay step cannot apply old step drafts to it
+- Profile and phase changes reset editor, picker and pagination context
+- A stale second client cannot overwrite a newer shared PersistentDB record
+- Version 0.2 records gain a disabled click option without a write during loading
+- A failed second DB write preserves active data and does not claim a successful save
+- Tiny client viewports construct only bounded reachable controls
+- An ability present in over sixteen visible slots is not silently truncated
+- Component aliases cannot classify a cooldown label as a keybind
+- Beginner click trial moves both overlay and action-bar frame to the next Sprite
+- Advanced mode advances only its overlay; expert has no progression or marks
+- Repeat counts, consecutive duplicate abilities and phase completion never loop automatically
+- Wrong ability, other interfaces, secondary Ops, targeting and hidden sources do not advance
+- Click trial guard reads no event payload when stopped, hidden, unfocused, editing or confirming
+- Progression follows the selected icon across overlay pages and never changes saved rotation data
+- Missing click API fails safely while ordinary manual reference remains available
+- Hub overlay visibility stops immediately even when saving fails or data is write-protected
+- Every named phase remains reachable without overlapping footer buttons
+- Seeded mixed editing actions preserve schema and reload exactly the latest saved record
+- A scanner error disables frames once while leaving the rotation and Start state active
+- Main tolerates disappearing or zero-sized parent interfaces and never restarts on recovery
+- Official click subscription is guarded after focus loss and removed on plugin shutdown
+- Bad click proxies disable that input channel without closing the rotation
+- Navigation retires old Editor actions before the next Draw, including the direct Profiles control
+- Selecting a different binding slot or bar rejects queued old key-save and catalogue callbacks without writing storage
+- Cancelled or replaced confirmations cannot execute or clear a later destructive request through queued controls
+- Saved legacy incantation captions remain visible above their passive tile and moved records reveal their editor page
+- A rotation that fits all available rows does not hide a fitting row to reserve an unnecessary pager
+- Every saved profile name stays literal across languages, pages, Hub, overlay and rename forms
+- Panel-only resize preserves live overlay controls while retiring stale panel controls and fields
+- Ordinary ability steps cannot reopen the removed per-step equipment assignment mode
+- Unknown native-only names never leak into another selected language
+- Saved reminders with unavailable native artwork remain selectable, movable and deletable without enabling new selections
+- Unavailable new picker candidates stay inactive even when callers supply an insertion payload
+- Unavailable passive ability and spell icons retain selected-language hover names without guessed artwork or selection
+- Passive native button helpers cannot execute actions while allowing underlying mouse interactions
+- Short Hub profile dialogs keep the scroll thumb within its track in both scroll directions
+- Old title and corner events cannot capture after navigation, closing or minimising the settings window
+- Current collapsed and independent overlay titles remain draggable, while removed overlays retire their grip
+- Enabling click-through retires old overlay title and corner captures before Draw
+- Cancelled New and Rename forms reject queued commits and field callbacks without restoring their drafts
+- A queued ability Details control cannot open the previous ability after selecting a passive reminder
+- Bindings and Editor expose the same twelve translated categories and natural navigation labels without translating profile names
+- Every passive category assigns the selected bar slot with its explicit key and localized preview without changing any rotation
+- Dragging a passive reference replaces the complete target descriptor, preserves its key and ignores retired catalogue callbacks
+- Unknown occupied slots retain their position and current native art, then clear or fall back without persisting raw artwork IDs
+- Captioned multirow previews and overlays keep captions above their own icons and align joined equipment at both native icon sizes
+- Every caption stays with its ability across narrow preview and overlay pages without touching rows or the pager
+- Long authored captions remain bounded above the icon and empty captions keep the compact row height
+- Potions, ammunition, actual weapons and EOF remain disjoint in every picker
+- Ammo and potions remain passive reminders, survive persistence and move with their following ability
+- Potions remain translated and searchable in Editor and Bindings without automatically changing any profile
+- Weapons have a direct tier filter combined with style and live search in all four languages
+- Special and EOF steps offer only real special weapons, with coloured EOFs as their separate option
+- Live search clears the name preview of a removed item without changing the rotation
+- Hub selects saved profiles and places Settings directly below languages without a Hide control
+- Compact Hub languages lead straight to reachable Settings in all four languages without the removed extra scroll row
+- A twelve-profile Hub window scrolls its own list within the game interface
+- Pager uses the official font width so 6/12 remains complete before the next arrow
+- Mode title, renamed Learner and Combat Rotation Profiles remain translated and separated at minimum width
+- Profile-specific Editor and Bindings buttons sit together under Rename/Delete and operate on the chosen profile
+- Detect and Diagnose work while stopped and do not enable ongoing input or change the selected rotation step
+- Editor phase titles are plain noninteractive text while profile phases still expand in place
+- Every reviewed ammunition entry, including four tar types, appears only in Ammunition rather than Weapons
+- Spells picker queries exclude incantations while general lookup, search, artwork and Necromancy remain intact
+- Both shared pickers hide duplicate filters and reset stale Incantation or Necromancy selections in every language
+- Editor and Bindings insert ammunition and Necromancy incantations from their single shared category
+- Previously saved ammunition, passive incantations and legacy incantation steps survive unchanged after reload
+- All six real bundled groups retain conditional or locked abilities while known minigames stay excluded
+- Constitution keeps more than the six unrestricted display entries without requiring an unlock or gameplay read
+- New conditional abilities retain their confirmed live group and type while explicit minigame families remain filtered
+- Display conditions never substitute locked graphics or arbitrary global Structs for current book icons
+- Live resize adjusts every settings frame while deferring content reflow and database writes until release
+- Resize release survives unavailable pointer access, commits computed dimensions once and ignores late native callbacks
+- Rotation cells retain native symbols during resize and wrap into the final wider rows on release
+- Repeated live reflows keep one content canvas and do no work while size stays unchanged
+- Ability and weapon search updates on each edit without replacing the focused field or accumulating icon previews
+- Special and EOF pickers search live, retain the input, and put item names beside the footer status
+- All selectable equipment excludes quest, minigame, dyed and unusable variants while preserving sixteen EOF colours
+- Minigame abilities stay out of every picker type without invalidating stored legacy steps
+- Only nonempty ability types appear for each skill and Special has no selection anywhere
+- A special step holds exactly one replacement weapon; ordinary ability selection never opens the equipment picker
+- Binding slot backgrounds remain aligned to native icon size across narrow and wide panels
+- Detection keeps the actual save error and never reports success after a failed write
+- Live search cancels a removed own drag source and rejects its stale click callback
+- Action-bar click progression pauses in text forms and during own window gestures
+- Every documented sequence shares slot labels in both directions without merging unrelated conjures
+- Shared-slot labels do not accept the wrong live stage but support a command with an imported conjure key
+- Conditional command stages remain selectable while unrelated situational entries stay excluded
+- Editor has no plus control and key-label configuration exists only in Overlay Settings
+- Footer shows a long Unicode item name above status with measured bounds at the minimum width
+- Weapon choices exclude augmented duplicates, ordinary tools and unverified specials while old IDs remain loadable
+- Bindings key inputs stay compact at minimum and maximum window sizes in all four languages
+- Rename and New block both input channels immediately before native fields render
+- Saving a rename or hiding an unfinished profile form restores the visible run
+- Accented key tokens never alias unrelated ASCII keys while known localised words remain valid
+- Both input channels stop on unavailable or stale client interfaces before reading event payloads
+- Six complete native books retire an absent bundled picker row despite its residual icon and preserve saved identity
+- Missing, failing or incomplete book/entry parameters never claim an absent bundled ability was removed
+- Exactly 512 readable entries remain complete while a 513th entry makes the membership fallback conservative
+- Complete books retain all documented follow-up stages through their current family, including a base after a recast
+- Current API filtering removes iconless choices and empty type categories while minigames always stay excluded
+- Current ability artwork rejects malformed and out-of-range Sprite integers
+- Only positively named saved future ability Structs reopen outside the picker without inventing book membership
+- Controller rejects retired and minigame additions while an earlier saved retired step remains intact
+- Search folding recognizes decomposed accents and capital sharp S without changing physical accented key glyphs
+- Malformed native slot rectangles stay unavailable and cannot replace a saved manual assignment
+- Semantic bar scanning rejects non-finite coordinates while retaining valid physical slots
+- A named bar proxy expiring between lookup and identity snapshot is skipped inside the protected read
+- An expiring direct settings interface is unavailable rather than an exception
+- Missing settings coordinates and a vanished fallback root do not abort other guarded work
+- Diagnostics tolerate a root becoming unreadable after its independently bounded scan
+- Fallback native rows use a transitive ordering even when nearby y coordinates straddle row tolerance
+- Every retained data identity has complete selected-language names and every legacy alias still resolves
+- Details and Delete act on the retained green editor mark after Stop without another ability click
+- Left clicks on both special ability icons select normally and never open the assignment picker
+- Only special/EOF controls offer Assign and their default native menu action remains Select in all languages
+- An assignment menu cannot retarget a different step after selection, phase change, panel close, live resize or source destruction
+- The assignment dialog keeps its marked target after focus loss and its Clear and weapon assignment controls still operate
+- Context menu processing ignores non-editor, unhovered and stale controls before touching an event payload
+- Equipment snapshot has unique numeric IDs, four styles, sixteen EOFs and all special categories
+- Weapons attach as reminders, duplicate clicks are idempotent and the ability stays the trigger
+- The selected special or EOF ability determines the trigger and item selection never changes it
+- Item annotations validate strictly and failed writes preserve the old rotation
+- Version four migrates without writes, preserving bars, phases and all display options
+- Moving a linked step preserves its complete chain and deleting it leaves no standalone items
+- Reminder chains render in reading order with keys and frames on ability cells only in all modes
+- Equipment picker filters, searches, links and clears items in all four languages at minimum window size
+- Special-weapon groups stay adjacent without arrows or page splits; ordinary switches retain arrows
+- Weapons are a direct editor category and clicked reminders persist before the following ability
+- Every editor category is directly available as one visible button in two rows
+- New abilities enter the correct live book and documented native type without a plugin update
+- Unknown future ability codes stay unconfirmed and arbitrary or iconless Structs are excluded
+- New abilities without native type metadata remain selectable under Unconfirmed type
+- A confirmed live book updates a bundled ability group without changing its stored identity
+- Abilities listed in multiple live books use a stable original group or fixed book priority
+- Unreviewed future numeric IDs are never interpreted and unknown saved reminders remain protected
+- Unsupported catalogue indexes preserve the reviewed catalogue without native index enumeration
+- Native numeric-key name-string indexes cannot add unreviewed canonical identities
+- Started rotation icons cannot select or edit any step in any mode
+- Panel and overlay resize corners preserve position, content, drafts and running state
+- Protected storage retains a transient resized window without overwriting records
+- Optional overlay dimensions accept existing version-five records and reject invalid sizes
+- Phase heading and phase one remain fixed while phase two expands directly below its row
+- All settings and rotation ability sprites use the detected action-bar dimensions
+- A queued icon press uses its hook origin even when the pointer already reached the target
+- Large native symbols wrap binding slots without shrinking them or overlapping key input
+- Native drag completion works without raw press hooks and keeps the original artwork outside capture
+- Passive items use an associated decorative Sprite with no button or press hooks
+- Interactive item icons retain click and drag callbacks while their previews are decorative
+- Current native artwork IDs never replace canonical saved click or drag payloads
+- Unresolved saved items render a passive placeholder without guessed art or active callbacks
+- Spell icons read the current native icon and selected-language name, stay decorative and do not use a locked-icon fallback
+- Spell buttons preserve spell payloads, own drag previews and scoped callback retirement
+- Profiles modes keep the full translated title, wrapping below navigation when the header cannot fit both
+- Visible labelled controls keep fixed compact dimensions across settings and rotation resizes
+- Hub puts Start above the selected profile and opens a scrollable profile window with complete cleanup
+- Long translated phase controls wrap within the minimum overlay and protected-storage controls stay inside settings
+- Phase one cannot be deleted through UI or controller and later phases retain an adjacent arrow/title group
+- Bindings and Rotation Editor provide reciprocal navigation without changing the selected profile or phase
+- Transparency slider previews only the window background and saves without rebuilding its native drag source
+- Failed transparency writes restore the previous background and preserve saved data
+- Click-through preserves phase navigation and can be disabled from Overlay Settings
+- Overlay visibility and key-label checks stay synchronised between Hub, Overlay Settings and Bindings in every mode
+- Detect shares key assignments across all phases and modes without stale manual captions or hidden bars
+- Assign key binding updates every rotation view and persistence without reviving the old detection cache
+- Two actual bindings for the same ability are shown together and hidden presets never add a third label
+- Optional visible-bar and click-through settings reject malformed values while old profiles still validate
+- The visible resize-corner symbol is absent while both transparent native resize captures remain
+- Mudborne canonical identity resolves a different native ID and never draws its augmented uncharged numeric collision
+- Native and canonical numeric namespaces may swap without changing reviewed identities or exposing unreviewed items
+- A positively identical original item can resolve immediately while a replacement must await complete unique scanning
+- Multiple eligible replacement IDs stay unresolved rather than choosing an enumeration's first match
+- Certificates, loans, quest items, unready states, wrong operations and conflicting weapon classes cannot become images
+- Potions, ammunition and Finality use their own positive action roles
+- Repeated canonical names require exact positive tiers even at the original numeric ID
+- Verified configName bindings allow localized item names and return current numeric IDs without trusting a localized name guess
+- Numeric-key named-index proxies resolve replacements using their actual named IDs
+- Missing or throwing APIs and a truncated or failed index never finalize partial replacement candidates
+- A stale resolved native object cannot keep supplying an image or exported binding
+- Verified Mudborne configName separates a saved canonical number from the beta's augmented uncharged collision
+- Missing bindings never fall back to a matching original numeric item or perform a full index scan
+- Exact verified config names resolve independently of localized item names and displayed operations
+- Named ID fallback uses only the verified config name's current number, never the canonical number
+- Certificate, loan, quest, unready and conflicting combat metadata fail closed even with a binding
+- Multi-tier canonical families require exact native tiers while a unique verified name allows an absent tier
+- Verified potion, ammunition and Finality roles survive translated native action labels
+- Explicit reinitialization refreshes changed configs while unavailable native APIs fail closed
+- Repeated artwork and name requests reuse the initialized static metadata without further native reads
+- Official GameKey and exact modifiers parse without guessing unknown labels
+- Ability-key mode advances both beginner markers and honors exact Shift combinations
+- OS repeat, wrong key, blocked input and Meta shortcuts never advance
+- An explicit step binding remains usable when the native Sprite is hidden
+- The same key on another visible ability is ambiguous and cannot advance
+- Manual slot keys override the native label and preserve exact modifiers
+- Text forms, Stop, expert, hidden overlay and focus loss remove key subscriptions
+- Text-opening keys pause immediately and never become an ability binding
+- Legacy progression flags migrate without controlling the new explicit Start session
+- Advanced ability keys move only the overlay marker; expert ignores every key
+- Switching beginner to advanced restarts overlay-only tracking; expert removes the subscription
+- Advanced key repeats, modifiers, pause and manual phases retain beginner input safeguards
+- Opening configuration while active prevents typed text from changing a step
+- No key payload is read when the client keyboard is blocked
+- Missing keyboard hardware or subscription does not stop the static rotation or retry on every draw
+- Zero-sized client is checked before any ability key payload access
+- Main advanced mode wires KeyDown without slot frames and removes it on lifecycle stops
+- Large native Editor rows and catalogue rows reserve separate pager space in short settings windows
+- Native-size detail and equipment headers separate icons, names, controls and fields
+- Rotation minimum height includes navigation, native icons, keys, captions and its pager
+- A small client keeps the rotation inside its viewport and scrolls a complete native row
+- Minimum-size Bindings keeps the catalogue, manual ability choice and key assignment reachable by scrolling
+- Minimum-height equipment pickers keep five reminder icons, complete result rows and footer controls separate
+- All 1253 items, 156 abilities and 141 spells have complete four-language names and are found by every selected-language full name
+- German lookup excludes English and native aliases in every item category, spells, incantations and abilities
+- Editor live search and hover use the selected plugin language in all categories and update immediately after switching language
+- Special-attack and EOF assignment dialogs use selected-language search and hover even with different native names
+- Existing automatic phase names follow every language in Editor, Profiles and overlay while custom names and saved phase data stay literal
+- Phase actions occupy the row above detail and delete-step actions across languages and window widths
+- Visible pages, dialogs, filters and Hub labels use registered translations without English fallback
+- Five real named bar families import all 70 independently indexed slots without pairs enumeration
+- Detecting native bars preserves manually stored additional bars through bar twenty
+- Loaded inactive native templates with visibleGlobal true are excluded using decoded CURRENT_BAR
+- Unavailable or invalid native preset metadata never falls through to the generic scanner
+- Native key labels remain independent of cooldown numbers and empty ability slots keep their keys
+- A missing native graphic does not shift subsequent slot identities or erase unavailable saved data
+- A positively empty native slot clears its previous imported ability and an unbound key clears its old key
+- Native frames and click matching use the exact current slot rectangle
+- Native slot keys advance without a prior saved import and reject other live abilities sharing the key
+- Live preset keys outrank stale saved assignments and a switched-away ability cannot advance
+- Compact native modifier labels are normalised only at the verified key field boundary
+- Explicit manual labels fill unreadable or blank native key fields without overriding a readable live key
+- Video regression: Q advances Undead Army to Finger of Death with Profiles open and moves both beginner frames
+- Profile rename explicitly opens a form and suspends tracking until save or cancel
+- Advanced tracking also works with the read-only profile page open while Expert remains static
+- Exact native detection avoids unused button components and semantic index enumeration
+- Unrecognised native key text preserves a manual correction while an explicitly empty key clears it
+- Semantic action-bar discovery handles native numeric-to-name and ordinary name-to-ID indexes
+- Detect preserves all fourteen positions with abilities, weapons, ammunition, potions, spells and prayers
+- Unknown occupied artwork survives import as a marker rather than an empty or guessed canonical item
+- Associated object identity outranks an ability-looking sprite and cannot trigger an ability frame, click or key
+- Shared cross-category sprite artwork imports as unknown while a distinct prayer remains identified
+- All five native bars retain typed contents without collapsing holes or modifying hidden saved bars
+- Unreadable native key labels preserve a manual passive label and an explicitly empty label clears it
+- Normal and tiny overlays omit the Hub toolbar while full windows retain the complete literal title and drag handle
+- Hub click-through appears below Show overlay and stays persisted and synchronized with Overlay Settings at narrow and wide widths
+- Click-through phase navigation remains clickable within its own hit areas and respects bounds and retired callbacks
+- Matching KeyDown on the fifteenth visible ability reveals page two in both assisted modes and all languages
+- A repeated boundary ability stays on page one until its final repetition and completing a phase never starts the next phase
+- Automatic reveal follows actual page capacity in narrow and tall overlays
+- Editor insertion beyond fifteen and the former ninety-six cap remains visible, pageable and persistent
+- Adding each passive kind selects only its own cell while retaining the ability insertion and assisted cursor
+- Direct passive selection and deletion use one ring and restore the preserved ability target
+- Duplicate queue clicks select the existing ordinary or legacy reminder without writing or adding cells
+- Tail and legacy reminder clicks remain the sole mark after Stop while the saved ability boundary remains available
+- Failed insertion retains the prior selection and stale reminder descriptors cannot hide the valid ability mark
+- Every passive weapon, ammunition, potion, spell and prayer uses the Editor square frame with full-opacity decorative art
+- Passive frames preserve joined special and EOF spacing, caption ownership and keys below the ability
+- Saved unavailable passive art retains square frames and placeholders without guessed sprites or actions
+- Overlay phase buttons switch manually in every mode and language without wrapping
+- Stop then Start resets to phase one and its first step without changing saved data
+- Restart never skips an empty first phase to reach a populated later phase
+- Reopening the phase picker keeps phase one above selected phase two
+- Nineteen saved additional bars remain editable and reloadable at minimum width
+- Existing legacy layouts beyond nineteen additional bars remain readable and unchanged
+- Dragging a step onto its immediate right neighbour changes order without losing metadata
+- Own drop coordinates remain valid independently of proxy identity
+- A held own gesture resolves scaled target bounds and never polls while idle
+- Clicks and drag previews never hide or remove the original ability icon
+- A release-button notification before ONRELEASE moves once and never selects or hides the dragged source
+- A normal held click and an abandoned gesture leave icons intact and other controls usable
+- Diagnose reports technical values without changing saved assignments or rotation progress
+- Version 4 defaults contain 156 unique abilities, six skills and German UI
+- Every ability and UI label is translated in all four languages
+- Translated, English and accent-insensitive ability searches preserve config identity
+- Unknown data versions, removed fields and invalid display values are rejected
+- Legacy profiles migrate without removed feature data and preserve rotations and bindings
+- UTF-8 legacy captions are truncated without splitting a character
+- Corrupt saved data remains untouched and write-protected
+- Failed storage does not replace current settings or profiles
+- New steps insert after the selected step, with safe repeat and caption limits
+- Repeated icons and manual row breaks do not expand or advance the rotation
+- Profile copies retain independent rotations
+- Profiles are selected by clickable names and immediately show their own rotation
+- The last Mein Training profile can be deleted, leaving an empty new rotation
+- Deletion of an earlier profile keeps the intended active profile
+- Profile changes cancel pending destructive confirmations
+- Catalogue icon buttons show their name on hover and insert the clicked ability
+- Native input text, cursor and selection are explicitly visible
+- Search and visible categories provide Necromancy as an explicit option
+- Step captions, repeat count and row breaks can be edited and saved
+- Overlay uses 30-pixel fallback icons and visibility is controlled from Hub
+- Closing or minimising settings preserves the independent overlay and offers reopening
+- Own native drag handles persist panel and overlay positions
+- Bindings retain no removed Layout controls while stored dimensions remain valid
+- Stop is immediate and blocks all scanning until a direct start
+- Sprite lookup is from the running client and missing config produces no guessed icon
+- Visible native sprite and key label are mapped without interpreting cooldowns
+- Duplicate visible slots survive, hidden slots are ignored and moved layouts refresh
+- Ambiguous key labels remain unknown and unavailable component index fails closed
+- Manual bars persist key-only corrections and duplicate abilities without aliasing automatic slots
+- Manual bar and slot limits reject partial state changes
+- Slot frames and all their children are click-through and absent in expert mode
+- Four languages, four pages and all modes construct at normal, minimum and small window sizes
+- Graphical bars work in every language at minimum size and retain fourteen slots
+- All settings pages and manual editors stay inside a 560 by 500 panel
+- A two-row overlay shows both rows without an unnecessary page break
+- All twelve profiles are listed by name in a normal panel
+- Copying a long accented name keeps valid UTF-8 and all languages persist
+- French prayer search folds capital and lowercase oe ligatures to the same displayed name
+- Prayer reminder validation accepts exactly one known discriminator and rejects duplicate or malformed saved cells
+- Prayer clicks deduplicate at their own boundary and phase-end prayers attach when a following ability is inserted
+- Moving and deleting a prayer preserves other reminder identities, canonical legacy items and all ability records
+- Mixed prayer groups retain the existing eight-reminder cap and failed moves, additions or deletions are atomic
+- Schema-six reload retains saved prayers and literal profile names even when current prayer artwork disappears
+- Prayer cells never advance a run or require an extra key between its ability steps
+- Reviewed prayer scope contains 44 standard prayers and 39 ancient curses including current Necromancy and new standard prayers
+- Every prayer searches and previews only its reviewed selected-language name without reading client names
+- Native artwork requires the correct named Struct, positive integer icon and actually present Param
+- Availability snapshots and book filters follow readable metadata while source records remain unchanged
+- Prayers is a visible passive category with selected-language search, preview and book filters after search
+- One prayer click persists one passive cell and prayer drag, selection and deletion preserve the abilities
+- Unavailable saved prayers remain editable while unavailable new prayer choices have no insertion gesture
+- Translated new branding fits narrow window titles and never renames saved old-brand profile names
+- Hub Start shows a populated rotation and follows input while settings stay closed without writing data
+- A failed Hub Start cannot reopen closed windows, subscribe input or change saved data
+- Hub Start preserves empty-rotation visibility while the settings panel remains closed
+- Profile and phase changes reject queued Assign, Delete and detail-form events before the next Draw
+- A fixed-seed lifecycle audit maintains model, phase, selection and subscription invariants across 1200 operations
+- Saved client-added abilities remain editable after missing book metadata when their own Structs stay readable
+- An unreadable saved future ability still protects the original database instead of accepting or dropping its step
+- Readable native keys outrank valid or invalid legacy step labels before Detect
+- Unreadable native fields preserve manual fallbacks and no-native explicit keys keep their gates
+- Shared-stage manual fallbacks still require the expected live stage and reject conflicting native keys
+- Client item names cannot override selected-language preview or search while markup remains literal
+- Overlay live reflow retires old buttons and title gestures without invalidating the other settings window
+- Late presses, drags and drops from a live-search result cannot reinsert removed ability choices
+- Live-search hover and dropdown callbacks require a currently owned result or popup
+- Drag previews leave catalogue clips, remain in the window, and are destroyed on result replacement
+- Repeated live searches retire detached preview hover callbacks without growing their owner registry
+- Nested scroll origins affect global coordinates and own drag hit tests use the visible position
+- Pointer drops respect partial clipping and native destinations must retain a visible clipped region
+- Removed form fields and sliders ignore delayed CHANGE, SELECT, RELEASE and hover hooks before reading destroyed proxies
+- Delayed wheel events cannot change the new profile's editor, bindings or phase scroll positions
+- Hub-only refresh, replacement, shrinking and destruction retire old buttons, checks, dialogs and wheel callbacks
+- Replaced popup and short-rotation viewports ignore old wheels while their active replacements still scroll
+- Second UI audit renders 256 language, native-size, viewport and page combinations without display failures
+- Translated ribbon controls remain within narrow native content hosts and keep their actions available
+- Unresolved saved item placeholders allocate no empty native sprite and retain their name preview
+- Queued presses from replaced search buttons and dropdown options retire before reading a destroyed native proxy
+- Reminder diagnostics use cached verified identities without numeric item probes, index scans or temporary exports
+- Missing or stale named item metadata stays unresolved without aborting diagnostics or changing saved data
+- Diagnostic group counts exclude minigames and distinguish loaded spell availability from current icons
+- Unavailable game interfaces skip static reminder diagnostics entirely
+- Each weapon, ammunition, potion, spell and incantation commits one independent passive cell on its first native click
+- Selecting other abilities after adding a reminder never moves or rewrites that reminder
+- Dragging one saved reminder moves only that cell and preserves all ability records
+- Dragging a saved spell into empty sequence space persists its tail without moving its original ability
+- Reminder drag reorder and removal are atomic, including capacity, write failures and legacy switch cells
+- The Delete reminder control deletes only its selected cell in a phase with no abilities
+- A completed native drag never consumes the next ordinary native button click
+- All eleven incantations remain visible as passive choices and old saved incantations never require input
+- Version five storage migrates read-only and tail validation rejects duplicate or malformed cells
+- Visible categories occupy two rows with a gap before the half-width search and adjacent type filter
+- All reviewed Greater variants remain available through their displayed base family
+- Saved Weapon, Potion and Spell preserve their mixed order between A and B through save and reload
+- Passive item and spell art has no press action and only ability keys advance A to B
+- The three reviewed combat bombs are selectable Potions and remain passive between ability triggers
+- Saved passive cells deduplicate and reject malformed, unavailable or ninth entries without further writes
+- Model validation rejects malformed, duplicate and oversized reminder arrays while preserving the saved record
+- Failed saving the next ability retains the entire reminder queue for a successful retry
+- Immediate attachment preserves mixed order, deduplicates, and a failed write cannot reset the current input context
+- Legacy switches keep their exact saved IDs and avoid duplicates when ordered new reminders are attached
+- Moving and deleting an ability moves and deletes its complete mixed reminder chain
+- A failed save or shared-storage conflict cannot partially save or discard queued reminders
+- An attachment limit is atomic and saved spells remain readable when their native icon later disappears
+- Removed duplicate IDs resolve to one canonical item and render it without rewriting saved rotations
+- Native ID indexes cannot restore removed records and are never enumerated by the runtime
+- Choosing a canonical weapon cannot duplicate its old aliased reminder or rewrite saved data
+- Panel and overlay captures perform zero UI construction, catalogue queries or DB access across sixty resize frames
+- An outstanding appearance draft stays in memory during capture and a missing release pointer retains the last exact resize target
+- Title release fallbacks finish once, retire delayed native drags and stop all later pointer following
+- Stop, unavailable game data and capture-update errors retire their native source without saving a partial gesture
+- Settings resize previews create or destroy no components and perform no catalogue or rotation reflow
+- Overlay previews keep exact icon pixels, captions, pages and scoped phase controls while only geometry changes
+- A held resize performs zero content rebuilds at sixty pointer updates and one final render after release
+- Associated objects and explicit slot numbers win over layered ability-looking artwork in either observation order
+- Contradictory object identities or sprite observations import as occupied unknown cells and never match progression
+- Conflicting explicit slot numbers cannot fall back to a guessed regular position
+- A complete generic row retains all fourteen positions when a layered cell becomes ambiguous
+- Repeated catalogue clicks insert identical abilities at the current insertion point
+- Clicking a sequence icon selects without opening details or adding another step
+- Catalogue drag into a nested target inserts once and suppresses its release click
+- Step drag reorders the full step record; dropping outside leaves the data unchanged
+- A stale drag or button cannot mutate another profile
+- Overlay and profile previews contain no automatic ability-name labels
+- Key labels toggle and persist independently of all three assistance modes
+- Localised key labels resolve configured slots and make ambiguity visible
+- Closing settings leaves no launcher and preserves the active ability overlay
+- Plain title capture moves the whole window at 125 percent scale and never polls idle
+- Typed slot assignment works while stopped without subscribing to global keys
+- Typed key assignment preserves ability and works in all three modes
+- Native settings import distinguishes main slots, additional bars and preset 15
+- Hidden, conflicting or unparseable settings never become guessed keybinds
+- Native settings discovery supports numeric-name indexes and rejects mismatched static component proxies
+- Native indexed slots preserve holes and map zero-based slot 0 to main slot 1
+- Ambiguous partial rows are not compressed into the first slots
+- Repeated slot and catalogue clicks never clear an assigned ability
+- The removed Hub settings layer cannot replace the floating settings window
+- All new control labels are translated and dropdown titles contain no literal v suffix
+- Category filters cover all catalogue items and retain Defence and Constitution thresholds
+- Diagnostics run explicitly while stopped or active and omit unrelated or textual settings
+- Diagnostics are read-only while stopped, active, on native bars, on obsolete APIs and after a completed scan
+- Diagnostic output is capped per index and tolerates unreadable metadata enumeration
+- Version 3 migrates the key-label option without touching existing storage on load
+- Virtual slots accept typed bindings without key capture and reject invalid combinations
+- Failed native pointer queries cancel an owned gesture without idle retries
+- Native settings key labels work without high-level Button components
+- Manage gear reopens the existing Profiles window and fills the native host with one own hint and opener
+- Settings gear and repeated ribbon readiness keep independent hosts and unsubscribe cleanly
+- Manage gear remains usable with protected storage and waits for the game interface without starting a run
+- Older clients without SettingsLayerReady keep the ribbon settings opener and shutdown available
+- Native gear hint and opener are translated in all four languages and keep old hosts inactive after replacement or shutdown
+- Settings-only refresh and small native panes preserve parent geometry and retire old own callbacks
+- Slider deselection and late old entries never replay an obsolete transparency value
+- Repeated native slider event pairs track the current value without intermediate saves or source replacement
+- A background scan never replaces Overlay Settings and stale slider events cannot change the saved setting
+- Transparency and resizing retain the warm full-window frame without fading symbols or the settings window
+- Transparency number field mirrors the slider and manual 1-100 input moves it without replacing either control
+- Transparency numeric edits persist through the existing debounce and retired input callbacks cannot change another page
+- The static passive catalogue has 130 Magic spells plus eleven evidenced incantations, without removed spell states
+- Current native ICON params alone control spell selection while absent icons preserve only validated saved identities
+- Spell levels follow readable current Params while display and search names follow only the plugin language
+- All four Ancient elemental families, Seren and Senntisten spells, modern aspects and spellbook swap directions remain distinct
+- Spellbook and type filters only expose actual selectable types and stable level sorting
+- Unavailable, malformed or throwing native Params never supply stale or invented spell artwork
+- Editor and Bindings share all action categories while Bindings retains its compact live search in four languages
+- Spellbook and type dropdowns stay below their selectors and filter against positive native spell results
+- Mixed catalogue clicks save weapon, potion and spell in selection order before adding a following ability
+- Native spell drops annotate an existing step once and moving that reminder preserves both ability positions
+- Dragging a spell to empty sequence space only queues a passive reminder and live search retires old spell gestures
+- Saved spell and item reminders render as passive art in running rotation overlays in every assistance mode
+- Unavailable spell artwork after catalogue rendering prevents both queued selection and native attachment
+- A saved tail spell reveals its sequence page in a long rotation and can be deleted independently
+- Equipment reminder headers scroll complete mixed spell and item chains without covering the ability or clear action
+- Selecting B from the stopped overlay rejects A's delayed details-field and Save events before Draw
+- Deleting A invalidates B's old icon instead of selecting shifted C or starting another drag
+- Successful ability insertion and reordering reject old indexed icons before the next Draw
+- No-op movement and failed structural saves keep current controls usable without changing the stored steps
+- Appearance commits keep their existing slider callbacks active until an actual step context changes
+- Every rotation decoration follows transparency while settings, text and native art stay opaque
+- Both frame partitions follow live size and collapsed settings retain a complete title bar
+- Slot schema accepts one typed identity or an explicit unknown marker while retaining legacy empty slots
+- Assigning any reference replaces the entire slot, preserves its key and literal profile name, and retires only its detected artwork
+- Assignment creates missing bars and dense slots while preserving explicit active-bar selection
+- Invalid assignments and failed assignment or clear saves preserve stored data and detected artwork
+- Passive and unknown keys never become ability labels or fallback matches and conflicting assignments block progression
+- Native item artwork cannot be mistaken for an ability even when both expose the same sprite
+- Sandbox without utf8 supports valid Unicode and rejects malformed scalar sequences
+- Every mode button switches and persists in all four languages without utf8
+- Profile creation, plain phase heading, search and append complete through actual UI callbacks
+- All native form fields receive input stylesheet, single-line text, cursor and enabled state
+- Every visible skill category appears exactly once including the selected group
+- Settings header omits language and Start controls while Hub retains explicit Start and Stop
+- Single-page areas have no redundant pager and empty editor has no reorder/delete controls
+- Ability page arrows are adjacent to the translated context label and honor bounds
+- Phase dropdown keeps stored order and single-phase profiles show one plain heading
+- Step reordering preserves values and deletion retains the remaining green editor mark
+- Transient storage read protection recovers through Reload and Confirm without a reset
+- Retry leaves malformed or wrong-type stored records protected and untouched
+- A stale editor can reload the newer record and subsequently save without losing its rotation
+- Version 2 training is removed from both own DB records while rotations and bars survive
+- Whole windows follow the pointer during draw and final coordinates save only once
+- Protected storage does not trap window movement and transient coordinates are never written
+- New phase defaults are localised while existing user names remain literal
+- Client icon updates are read afresh and Greater Deaths Swiftness stays distinct
+- Hub content exposes one settings opener, overlay checks and four exclusive languages
+- Short Hub panes scroll their own content and never alter the supplied client layer
+- Main subscribes independently to Hub content and the requested settings gear
+- Empty phases allow explicit detection without a step cursor or keyboard subscription
+- Start and Detect rebuild cached component names after same-table index changes
+- Portuguese Space labels resolve to the same official key without relaxing modifiers
+- Late input callbacks cannot restore drafts after saving, changing profile or destroying a form
+- Every rendered enabled configuration button has a callable path without unhandled errors
+- The editor appends beyond both fifteen visible abilities and the former ninety-six-step cap
+- Large phases preserve every validated step through save, reload, reorder and append
+- Legacy migrations preserve phases longer than the former cap without rewriting storage during load
+- Unlimited phase length still rejects malformed arrays and invalid steps after index ninety-six
+- A non-enumerable Component proxy supports bounded direct slot lookup and preserves holes
+- A named Interface lookup finds a full native bar without enumerating Component names
+- Zero or unresolved ID probes never create an invented native bar or frame
+- Diagnostics distinguish zero enumeration from successful direct lookup and report the scan boundary
+- Manual ability/key assignments advance without a native name index and leave PersistentDB unchanged
+- A conflicting manual key assigned to another ability does not advance
+- A key plus its native click event counts once while repeated distinct key presses remain usable
+- Start and mode changes select the first assisted step while Expert has no progress cursor
+- Opening settings and receiving Hub content do not stop the independent rotation
+- Plain title references its window and another control recovers a missing native completion
+- New phases avoid a default name already entered by the player
+- Compact Bindings has no separate ability picker and preserves the selected slot and key
+- Bindings omit manual bar counters and expose Diagnose and Detect
+- Ordinary resizes and GAME notifications preserve running; minimising and lobby stop immediately
+- Native constructors reject Button and Text as parents of UI components
+- Editor, repeated inserts and Save retain settings with strict native parent types
+- Populated binding slots render icons in collections and remain editable
+- Native window capture finishes once on ancestor completion without release-click actions
+- Documented scalar mouse accessors work when the Vector2 accessor is unavailable
+- Releasing an own icon twice inserts only once without a native moved component
+- Drawing exceptions keep a recovery panel without closing flags or retry loops
+- Both title regions have no button skin and each pointer update moves the visible window before release
+- A title press without a native drag never leaves a window following later pointer movement
+- An ancestor window hook ignores an active ability-icon drag
+- A destroyed title and ancestor cannot start or save a gesture in a newer form
+- Window captions keep their inset when the native drag source receives a separate offset
+- Phase selection shows its own ability icons directly and keeps only the navigation Editor
+- All 156 ability icon assignments match the own beta export in four languages; removed names absent (not visual verification)
+
+## Outstanding native and personal checks
+
+- Visually inspect icons, text, forms and dropdowns in four languages, different client versions and UI scales.
+- Check all visible action bars, shared recast sequences, duplicate assignments, Shift/Ctrl/Alt, manual corrections and layout/preset changes.
+- Check Stop, focus changes, minimization, logout, closed settings/hidden overlay, mouse-opened text/chat/console fields and removal of all input subscriptions.
+- Check drag/drop, resizing, release outside controls, click-through, transparency and restoration of saved window settings.
+- Check migration, repeats, manual phase changes, passive item/spell reminders, storage failures and shared multi-client storage. The API provides no atomic compare-and-swap.
+- The complete native matrix and other platforms remain outstanding. Native evidence identifies only the areas actually checked.
+- Personal human understanding, historical provenance evidence and individual Jagex assessment remain separate matters; see docs/TESTING.md and docs/AI-STATUS.md.

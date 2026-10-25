@@ -1,0 +1,11 @@
+{
+  "name": "PvM Rotation Helper",
+  "version": "0.9.14",
+  "hasSettingsIcon": true,
+  "hasRibbonIcon": true,
+  "requiredDependencies": {},
+  "optionalDependencies": {},
+  "requiredPermissions": [],
+  "optionalPermissions": [],
+  "urls": {}
+}
